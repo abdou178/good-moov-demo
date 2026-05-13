@@ -13,7 +13,7 @@ function App() {
     <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-[#FF8C00] selection:text-black">
       <Navbar lang={lang} setLang={setLang} content={currentContent} />
       <Hero content={currentContent} />
-      <Menu content={currentContent} />
+      <Menu content={currentContent} lang={lang} />
       <Footer content={currentContent} />
     </div>
   );

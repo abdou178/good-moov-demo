@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { menuData } from '../data';
 
-const Menu = ({ content }) => {
+const Menu = ({ content, lang }) => {
   const [activeCategory, setActiveCategory] = useState('SHAKE');
 
   return (
@@ -50,8 +50,8 @@ const Menu = ({ content }) => {
                   <h3 className="text-xl font-bold group-hover:text-[#FF8C00] transition-colors">{item.name}</h3>
                   <span className="text-[#FFD700] font-semibold whitespace-nowrap ml-4">{item.price}</span>
                 </div>
-                {item.description && (
-                  <p className="text-gray-400 text-sm">{item.description}</p>
+                {item.description && item.description[lang] && (
+                  <p className="text-gray-400 text-sm">{item.description[lang]}</p>
                 )}
               </div>
             ))}
